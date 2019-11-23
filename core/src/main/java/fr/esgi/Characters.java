@@ -90,15 +90,15 @@ public class Characters {
         }
     }
 
-    public void attackEntities(Entities ennemy) {
-        if (ennemy.getCurrentHealth() > 0) {
-            System.out.println("You are attacking " + ennemy.getName());
-            ennemy.takeDamage(1);
+    public void attackEntities(Entities entity) {
+        if (entity.getCurrentHealth() > 0) {
+            System.out.println("You are attacking " + entity.getName());
+            entity.takeDamage(1);
         }else {
-            System.out.println("The "+ennemy.getName()+" is already dead");
+            System.out.println("The "+entity.getName()+" is already dead");
         }
-            if (ennemy.getCurrentHealth() == 0) {
-                System.out.println("You killed " + ennemy.getName());
+            if (entity.getCurrentHealth() == 0) {
+                System.out.println("You killed " + entity.getName());
             }
     }
 
