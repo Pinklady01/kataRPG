@@ -8,10 +8,18 @@ public class Mage extends Characters {
         super(name, job);
     }
 
+    public int getMaxHeal() { return maxHeal; }
+
+    public void setMaxHeal(int maxHeal) { this.maxHeal = maxHeal; }
+
+    public int getMinHeal() { return minHeal; }
+
+    public void setMinHeal(int minHeal) { this.minHeal = minHeal; }
+
     public void heal(Characters chara) {
         if (this.verifFaction(chara) != 2){
-            if (chara.status) {
-                int random = (int) (Math.random() * (this.maxHeal - this.minHeal)) + this.minHeal;
+            if (chara.isStatus()) {
+                int random = (int) (Math.random() * (this.getMaxHeal() - this.getMinHeal())) + this.getMinHeal();
                 System.out.println("You are healin the player" + chara.getName() + " of " + random);
                 chara.healing(random);
             } else {

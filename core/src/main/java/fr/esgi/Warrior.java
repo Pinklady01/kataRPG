@@ -6,16 +6,23 @@ public class Warrior extends Characters {
 
     public Warrior(String name, String job) {
         super(name, job);
-
     }
 
+    public int getMaxDamage() { return maxDamage; }
+
+    public void setMaxDamage(int maxDamage) { this.maxDamage = maxDamage; }
+
+    public int getMinDamage() { return minDamage; }
+
+    public void setMinDamage(int minDamage) { this.minDamage = minDamage; }
+
     public void attack(Characters chara) {
-        if (chara.status) {
+        if (chara.isStatus()) {
             if (this.verifFaction(chara) != 1 || this.equals(chara)) {
                 System.out.println("You ara attacking the player " + chara.getName());
-                int random = (int) (Math.random() * (this.maxDamage - this.minDamage)) + this.minDamage;
+                int random = (int) (Math.random() * (this.getMaxDamage() - this.getMinDamage())) + this.getMinDamage();
                 chara.takeDamage(random);
-                if (chara.health == 0) {
+                if (chara.getHealth() == 0) {
                     System.out.println("You killed the player " + chara.getName());
                 }
             } else {
@@ -24,17 +31,13 @@ public class Warrior extends Characters {
         }
     }
 
-    public void heal(Characters chara) {
-        if (chara == this) {
-            if (chara.status) {
+    public void heal() {
+            if (this.isStatus()) {
                 System.out.println("You are healing yourself");
-                chara.healing(1);
+                this.healing(1);
             } else {
-                System.out.println("You are already dead !");
+                System.out.println("Too late!!! you are already dead !");
             }
-        } else {
-            System.out.println("You can only heal yourself");
-        }
     }
 }
 
