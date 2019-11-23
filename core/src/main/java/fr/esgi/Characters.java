@@ -29,13 +29,21 @@ public class Characters {
         this.name = name;
     }
 
-    public int getHealth() { return health; }
+    public int getHealth() {
+        return health;
+    }
 
-    public void setHealth(int health) { this.health = health; }
+    public void setHealth(int health) {
+        this.health = health;
+    }
 
-    public int getMaxHealth() { return maxHealth; }
+    public int getMaxHealth() {
+        return maxHealth;
+    }
 
-    public void setMaxHealth(int maxHealth) { this.maxHealth = maxHealth; }
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
+    }
 
     public boolean isStatus() {
         return status;
@@ -45,38 +53,54 @@ public class Characters {
         this.status = status;
     }
 
-    public Faction getFaction() { return faction; }
+    public Faction getFaction() {
+        return faction;
+    }
 
-    public void setFaction(Faction faction) { this.faction = faction; }
+    public void setFaction(Faction faction) {
+        this.faction = faction;
+    }
 
-    public int verifFaction(Characters chara){
-        if(this.getFaction() == null){
+    public int verifFaction(Characters chara) {
+        if (this.getFaction() == null) {
             //no faction
             return 0;
-        }else if(this.getFaction().equals(chara.faction)){
+        } else if (this.getFaction().equals(chara.faction)) {
             //same faction
             return 1;
-        }else{
+        } else {
             //different faction
             return 2;
         }
     }
 
-    public void attack(Characters ennemy){
-        if(ennemy != this){
-            if(ennemy.isStatus()){
-                if(this.verifFaction(ennemy) != 1){
-                    System.out.println("You are attacking the player "+ennemy.getName());
+    public void attackCharacter(Characters ennemy) {
+        if (ennemy != this) {
+            if (ennemy.isStatus()) {
+                if (this.verifFaction(ennemy) != 1) {
+                    System.out.println("You are attacking the player " + ennemy.getName());
                     ennemy.takeDamage(1);
-                    if(ennemy.getHealth() == 0){
-                        System.out.println("You killed the player "+ennemy.getName());
+                    if (ennemy.getHealth() == 0) {
+                        System.out.println("You killed the player " + ennemy.getName());
                     }
                 }
-            }else {
-                System.out.println("The player "+ennemy.getName()+" is already dead !");
+            } else {
+                System.out.println("The player " + ennemy.getName() + " is already dead !");
             }
         }
-     }
+    }
+
+    public void attackEntities(Entities ennemy) {
+        if (ennemy.getCurrentHealth() > 0) {
+            System.out.println("You are attacking " + ennemy.getName());
+            ennemy.takeDamage(1);
+        }else {
+            System.out.println("The "+ennemy.getName()+" is already dead");
+        }
+            if (ennemy.getCurrentHealth() == 0) {
+                System.out.println("You killed " + ennemy.getName());
+            }
+    }
 
     public void heal(Characters chara){
         if (this.verifFaction(chara) != 2){
@@ -99,7 +123,6 @@ public class Characters {
     }
 
      public void takeDamage(int damage){
-        if(this.isStatus()){
             this.setHealth(this.getHealth() - damage);
             if(this.getHealth() < 0){
                 this.setHealth(0);
@@ -107,8 +130,7 @@ public class Characters {
             if (this.getHealth() == 0){
                 this.setStatus(false);
             }
-        }
      }
-
-
 }
+
+

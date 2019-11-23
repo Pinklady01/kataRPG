@@ -28,7 +28,7 @@ public class Mage extends Characters {
         }
     }
 
-    public void attack(Characters ennemy) {
+    public void attackCharacter(Characters ennemy) {
         System.out.println("You can't attack!");
     }
 

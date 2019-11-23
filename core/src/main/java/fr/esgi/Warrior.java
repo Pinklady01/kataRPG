@@ -16,7 +16,7 @@ public class Warrior extends Characters {
 
     public void setMinDamage(int minDamage) { this.minDamage = minDamage; }
 
-    public void attack(Characters chara) {
+    public void attackCharacter(Characters chara) {
         if (chara.isStatus()) {
             if (this.verifFaction(chara) != 1 || this.equals(chara)) {
                 System.out.println("You ara attacking the player " + chara.getName());
