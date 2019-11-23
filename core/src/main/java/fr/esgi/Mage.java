@@ -12,16 +12,16 @@ public class Mage extends Characters {
         if (this.verifFaction(chara) != 2){
             if (chara.status) {
                 int random = (int) (Math.random() * (this.maxHeal - this.minHeal)) + this.minHeal;
-                System.out.println("Vous healez le joueur " + chara.getName() + " de " + random);
-                chara.healing(1);
+                System.out.println("You are healin the player" + chara.getName() + " of " + random);
+                chara.healing(random);
             } else {
-                System.out.println("Le joueur " + chara.getName() + " est déjà mort !");
+                System.out.println("The player " + chara.getName() + " is already dead !");
             }
         }
     }
 
     public void attack(Characters ennemy) {
-        System.out.println("Vous ne pouvez attaquer!");
+        System.out.println("You can't attack!");
     }
 
 }

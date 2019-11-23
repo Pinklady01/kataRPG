@@ -12,14 +12,14 @@ public class Warrior extends Characters {
     public void attack(Characters chara) {
         if (chara.status) {
             if (this.verifFaction(chara) != 1 || this.equals(chara)) {
-                System.out.println("Vous attaquez le joueur " + chara.getName());
+                System.out.println("You ara attacking the player " + chara.getName());
                 int random = (int) (Math.random() * (this.maxDamage - this.minDamage)) + this.minDamage;
                 chara.takeDamage(random);
                 if (chara.health == 0) {
-                    System.out.println("Vous avez tué le joueur " + chara.getName());
+                    System.out.println("You killed the player " + chara.getName());
                 }
             } else {
-                System.out.println("Le joueur " + chara.getName() + " est déjà mort !");
+                System.out.println("The player " + chara.getName() + " is already dead !");
             }
         }
     }
@@ -27,13 +27,13 @@ public class Warrior extends Characters {
     public void heal(Characters chara) {
         if (chara == this) {
             if (chara.status) {
-                System.out.println("Vous healez le joueur " + chara.getName());
+                System.out.println("You are healing yourself");
                 chara.healing(1);
             } else {
-                System.out.println("Le joueur " + chara.getName() + " est déjà mort !");
+                System.out.println("You are already dead !");
             }
         } else {
-            System.out.println("Vous ne pouvez que vous soigner");
+            System.out.println("You can only heal yourself");
         }
     }
 }

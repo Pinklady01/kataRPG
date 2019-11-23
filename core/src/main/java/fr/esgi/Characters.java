@@ -29,6 +29,14 @@ public class Characters {
         this.name = name;
     }
 
+    public int getHealth() { return health; }
+
+    public void setHealth(int health) { this.health = health; }
+
+    public int getMaxHealth() { return maxHealth; }
+
+    public void setMaxHealth(int maxHealth) { this.maxHealth = maxHealth; }
+
     public boolean isStatus() {
         return status;
     }
@@ -37,76 +45,66 @@ public class Characters {
         this.status = status;
     }
 
+    public Faction getFaction() { return faction; }
+
+    public void setFaction(Faction faction) { this.faction = faction; }
+
     public int verifFaction(Characters chara){
-        if(this.faction == null){
-            //pas de faction
+        if(this.getFaction() == null){
+            //no faction
             return 0;
-        }else if(this.faction.equals(chara.faction)){
-            //même faction
+        }else if(this.getFaction().equals(chara.faction)){
+            //same faction
             return 1;
         }else{
-            // factions différentes
+            //different faction
             return 2;
         }
     }
 
     public void attack(Characters ennemy){
         if(ennemy != this){
-            if(ennemy.status){
+            if(ennemy.isStatus()){
                 if(this.verifFaction(ennemy) != 1){
-                    System.out.println("Vous attaquez le joueur "+ennemy.getName());
+                    System.out.println("You are attacking the player "+ennemy.getName());
                     ennemy.takeDamage(1);
-                    if(ennemy.health == 0){
-                        System.out.println("Vous avez tué le joueur "+ennemy.getName());
+                    if(ennemy.getHealth() == 0){
+                        System.out.println("You killed the player "+ennemy.getName());
                     }
                 }
             }else {
-                System.out.println("Le joueur "+ennemy.getName()+" est déjà mort !");
+                System.out.println("The player "+ennemy.getName()+" is already dead !");
             }
         }
-
      }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public int getMaxHealth() {
-        return maxHealth;
-    }
-
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
-    }
 
     public void heal(Characters chara){
         if (this.verifFaction(chara) != 2){
-            if(chara.status){
-                System.out.println("Vous healez le joueur "+chara.getName());
+            if(chara.isStatus()){
+                System.out.println("You are healing "+chara.getName());
                 chara.healing(1);
             }else {
-                System.out.println("Le joueur "+chara.getName()+" est déjà mort !");
+                System.out.println("The player "+chara.getName()+" is already dead !");
             }
         }
     }
 
     public void healing(int number){
-        if(this.status){
-            this.health += number;
-            if (this.health > maxHealth){
-                this.health = maxHealth;
+        if(this.isStatus()){
+            this.setHealth(this.getHealth() + number);
+            if (this.getHealth() > this.maxHealth){
+                this.setHealth(this.maxHealth);
             }
         }
     }
 
      public void takeDamage(int damage){
-        if(this.status){
-            this.health -= damage;
-            if (this.health == 0){
+        if(this.isStatus()){
+            this.setHealth(this.getHealth() - damage);
+            if(this.getHealth() < 0){
+                this.setHealth(0);
+            }
+            if (this.getHealth() == 0){
                 this.setStatus(false);
             }
         }
