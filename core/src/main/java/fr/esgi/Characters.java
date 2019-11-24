@@ -65,7 +65,7 @@ public class Characters {
         if (this.getFaction() == null) {
             //no faction
             return 0;
-        } else if (this.getFaction().equals(chara.faction)) {
+        } else if (this.getFaction().equals(chara.faction) || this.getFaction().isFriends(chara.getFaction())) {
             //same faction
             return 1;
         } else {
