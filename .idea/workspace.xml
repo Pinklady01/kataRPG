@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5ec2814-b81d-4d34-a214-a6662256e4f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Characters.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +60,7 @@
       <updated>1574434517560</updated>
       <workItem from="1574434523894" duration="110000" />
       <workItem from="1574434679134" duration="4048000" />
-      <workItem from="1574495756143" duration="4857000" />
+      <workItem from="1574495756143" duration="5163000" />
     </task>
     <task id="LOCAL-00001" summary="Modification in every class">
       <created>1574497688678</created>
@@ -85,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574499599061</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add Entities">
+      <created>1574501031474</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574501031474</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
