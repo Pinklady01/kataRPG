@@ -1,12 +1,14 @@
 package fr.esgi;
 
+import java.util.ArrayList;
+
 public class Characters {
     protected String name;
     protected int health = 100;
     protected int maxHealth = 100;
     protected boolean status = true;
     protected String job;
-    protected Faction faction;
+    protected ArrayList<Faction> factions = new ArrayList<Faction>();
 
     public Characters(String name, String job) {
         this.name = name;
@@ -29,21 +31,13 @@ public class Characters {
         this.name = name;
     }
 
-    public int getHealth() {
-        return health;
-    }
+    public int getHealth() { return health; }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
+    public void setHealth(int health) { this.health = health; }
 
-    public int getMaxHealth() {
-        return maxHealth;
-    }
+    public int getMaxHealth() { return maxHealth; }
 
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
-    }
+    public void setMaxHealth(int maxHealth) { this.maxHealth = maxHealth; }
 
     public boolean isStatus() {
         return status;
@@ -53,25 +47,39 @@ public class Characters {
         this.status = status;
     }
 
-    public Faction getFaction() {
-        return faction;
-    }
+    public ArrayList<Faction> getFactions() { return factions; }
 
-    public void setFaction(Faction faction) {
-        this.faction = faction;
+    public void setFactions(ArrayList<Faction> factions) { this.factions = factions; }
+
+    public boolean isFaction(Faction faction) {
+        if (this.getFactions().contains(faction)) {
+            return true;
+        }
+        return false;
     }
 
     public int verifFaction(Characters chara) {
-        if (this.getFaction() == null) {
+        if (this.getFactions() == null) {
             //no faction
             return 0;
-        } else if (this.getFaction().equals(chara.faction) || this.getFaction().isFriends(chara.getFaction())) {
-            //same faction
-            return 1;
-        } else {
-            //different faction
-            return 2;
         }
+        if(this.equals(chara)){
+            // if it's the same character
+            return 1;
+        }
+        for (int i = 0; i < chara.getFactions().size(); i++) {
+            for (int j = 0; j < this.getFactions().size(); j++) {
+                if(this.isFaction(chara.getFactions().get(i))){
+                    // if the two characters have a same faction in commun
+                    return 1;
+                }
+                if (this.getFactions().get(j).isFriends(chara.getFactions().get(i))) {
+                    // if one of their faction are allies
+                    return 1;
+                }
+            }
+        }
+        return 2;
     }
 
     public void attackCharacter(Characters ennemy) {
@@ -103,7 +111,7 @@ public class Characters {
     }
 
     public void heal(Characters chara){
-        if (this.verifFaction(chara) != 2){
+        if (this.verifFaction(chara) !=2){
             if(chara.isStatus()){
                 System.out.println("You are healing "+chara.getName());
                 chara.healing(1);

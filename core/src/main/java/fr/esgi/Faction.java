@@ -23,18 +23,12 @@ public class Faction {
         return members;
     }
 
-    public void setMembers(ArrayList<Characters> members) {
-        this.members = members;
-    }
+    public void setMembers(ArrayList<Characters> members) { this.members = members; }
 
     public void leaveFaction(Characters chara){ this.getMembers().remove(chara); }
 
     public void joinFaction(Characters chara){ this.getMembers().add(chara); }
 
-    public void containsChara(Characters chara){
-        //Returns true if this list contains the specified element.
-        this.getMembers().contains(chara);
-    }
     public void becomeFriend(Faction faction){ this.getFriends().add(faction); }
 
     public ArrayList<Faction> getFriends() {
