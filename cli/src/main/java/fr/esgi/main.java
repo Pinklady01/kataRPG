@@ -16,21 +16,21 @@ public class main {
         Characters pnj = new Characters("PNJ SUPER PUISSANT", "PNJ");
         Faction tail = new Faction("fairy tail");
         Faction mu = new Faction("mugiwara");
-        Entities d = new Entities("Dragon des ocean infernal", 10000);
-        while(monkey.isStatus()){
-            attackPlayer(scarlet, monkey);
-        }
+        Entities d = new Entities("Dragon des océans infernal", 10000, 200);
+        attackPlayer(scarlet, monkey);
+        buy1Armor(monkey);
+
     }
 
     public static void attackPlayer(Characters player, Characters chara) {
         if (chara.isStatus()) {
             if (player.equals(chara)) {
-                System.out.println("Do you know that you are attacking yourself ?!\n");
+                System.out.println("Do you know that you are attacking yourself ?! Just to be sure...\n");
             }
             System.out.println("You want to attack the player" + chara.getName() + "\n");
             player.attackCharacter(chara);
             if (chara.getHealth() == 0) {
-                System.out.println("You killed the player " + chara.getName()+ " You have a bright futur!\n");
+                System.out.println("You killed the player " + chara.getName()+ " You have a bright futur! You can steal his monney if you want!\n");
             }
         }else {
             System.out.println("The player " + chara.getName() + " is already dead ! You can now relax and STOP ATTACKING HIM!\n");
@@ -44,6 +44,7 @@ public class main {
             if (entity.getCurrentHealth() == 0) {
                 System.out.println("You killed " + entity.getName()
                         + ". You feel more confident in your abilities right now. This entity shouldn't have cross your path! \n");
+
             }
         }else {
             System.out.println("The "+entity.getName()+" is already dead... Stop...don't try anymore... That's strange.. \n");
@@ -105,6 +106,26 @@ public class main {
         }else {
             System.out.println("The faction "+faction1.getFactionName()+" and the Faction "+faction2.getFactionName()
                     +" are already ENNEMIES. You should never forget the ones who died during this war!! RIP\n");
+        }
+    }
+
+    public static void searchACorps(Characters player, Characters chara){
+        if(!chara.isStatus() && chara.getSousous() != 0){
+            System.out.printf("MMMMHHHHHHhhhhh you just needed to tend the arm to take:"+chara.getSousous()+" silvers.\n");
+            player.lootFromPlayer(chara);
+        }else if(chara.isStatus()){
+            System.out.printf("I think you are mistaking... It's not a corps. He is still alive. Try to give him some hits! \n");
+        }else {
+            System.out.printf("The corps is already decomposing.. There is nothing left. Except some juicy meat \n");
+        }
+    }
+
+    public static void buy1Armor(Characters player){
+        if(player.getSousous()>100){
+            player.buyArmor();
+            System.out.println("I knew you were afraid of having your finger cut! That's why you bought a sewing dice for your finger!\n");
+        }else{
+            System.out.println("You are not rich enough to buy the more resist equipment ever!!!!\n");
         }
     }
 

@@ -21,6 +21,11 @@ public class Warrior extends Characters {
             if (this.verifFaction(chara) != 1 || this.equals(chara)) {
                 int random = (int) (Math.random() * (this.getMaxDamage() - this.getMinDamage())) + this.getMinDamage();
                 chara.takeDamage(random);
+                if(!this.equals(chara)){
+                    if(chara.getHealth() ==0){
+                        this.obtainXp(chara.getXpGiven());
+                    }
+                }
             }
         }
     }

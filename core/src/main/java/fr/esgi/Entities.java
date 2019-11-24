@@ -3,6 +3,11 @@ package fr.esgi;
 public class Entities {
     protected String name;
     protected int currentHealth;
+    protected int xpGiven;
+
+    public int getXpGiven() { return xpGiven; }
+
+    public void setXpGiven(int xpGiven) { this.xpGiven = xpGiven; }
 
     public String getName() {
         return name;
@@ -20,7 +25,7 @@ public class Entities {
         this.currentHealth = currentHealth;
     }
 
-    public Entities(String name, int currentHealth) {
+    public Entities(String name, int currentHealth, int xpGiven) {
         this.name = name;
         this.currentHealth = currentHealth;
     }

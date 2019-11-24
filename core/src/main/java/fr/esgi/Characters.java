@@ -9,12 +9,40 @@ public class Characters {
     protected boolean status = true;
     protected String job;
     protected ArrayList<Faction> factions = new ArrayList<Faction>();
+    protected int sousous = 15;
+    protected int xp = 0;
+    protected int xpGiven = 40;
+    protected int lvl = 1;
+    protected int xpNeeded = 50;
+    protected int armor = 0;
+    protected int damage = 1;
+
 
     public Characters(String name, String job) {
         this.name = name;
         this.job = job;
         System.out.printf("You are born !!! (｡◕‿◕｡) \n");
     }
+
+    public int getXpNeeded() { return xpNeeded; }
+
+    public void setXpNeeded(int xpNeeded) { this.xpNeeded = xpNeeded; }
+
+    public int getXp() { return xp; }
+
+    public void setXp(int xp) { this.xp = xp; }
+
+    public int getXpGiven() { return xpGiven; }
+
+    public void setXpGiven(int xpGiven) { this.xpGiven = xpGiven; }
+
+    public int getLvl() { return lvl; }
+
+    public void setLvl(int lvl) { this.lvl = lvl; }
+
+    public int getSousous() { return sousous; }
+
+    public void setSousous(int sousous) { this.sousous = sousous; }
 
     public String getJob() {
         return job;
@@ -52,6 +80,14 @@ public class Characters {
 
     public void setFactions(ArrayList<Faction> factions) { this.factions = factions; }
 
+    public int getArmor() { return armor; }
+
+    public void setArmor(int armor) { this.armor = armor; }
+
+    public int getDamage() { return damage; }
+
+    public void setDamage(int damage) { this.damage = damage; }
+
     public boolean isFaction(Faction faction) {
         if (this.getFactions().contains(faction)) {
             return true;
@@ -83,19 +119,57 @@ public class Characters {
         return 2;
     }
 
+    public void buyArmor(){
+        if(this.getSousous()>100){
+            this.setArmor(this.getArmor()+1);
+            this.setSousous(this.getSousous()-100);
+        }
+    }
+
     public void attackCharacter(Characters ennemy) {
         if (ennemy != this) {
             if (ennemy.isStatus()) {
                 if (this.verifFaction(ennemy) != 1) {
-                    ennemy.takeDamage(1);
+                    ennemy.takeDamage(this.getDamage());
+                    if(ennemy.getHealth() ==0){
+                        this.obtainXp(ennemy.getXpGiven());
+                    }
                 }
             }
         }
     }
 
+    public void obtainXp(int xp){
+        if(this.getXp() + xp >= this.getXpNeeded()){
+            this.lvlUp((this.getXp() + xp)/this.getXpNeeded());
+            this.setXp((this.getXp() + xp)%this.getXpNeeded());
+        }
+    }
+
+
+    public void lvlUp(int lvl){
+        this.setLvl(this.getLvl() + lvl);
+        this.setXpNeeded((int)(this.getXpNeeded()+lvl*(0.1*this.getXpNeeded())));
+        this.setXpGiven(this.getXpGiven()+5);
+        System.out.println("The player "+this.getName()+" is now lvl "+this.getLvl()+"!! You should take example!");
+        this.healing(this.getMaxHealth());
+        System.out.println("The Godness blessed you. youg padawan "+this.getName()+"You are now full healed. ");
+    }
+
+    public void lootFromPlayer(Characters chara){
+        if(!chara.isStatus() && chara.getSousous() != 0){
+            this.setSousous(this.getSousous() + chara.getSousous());
+            chara.setSousous(0);
+        }
+
+    }
+
     public void attackEntities(Entities entity) {
         if (entity.getCurrentHealth() > 0) {
-            entity.takeDamage(1);
+            entity.takeDamage(this.getDamage());
+            if(entity.getCurrentHealth() == 0){
+                this.obtainXp(entity.getXpGiven());
+            }
         }
     }
 
@@ -116,8 +190,8 @@ public class Characters {
         }
     }
 
-     public void takeDamage(int damage){
-            this.setHealth(this.getHealth() - damage);
+     public void takeDamage(int damageTaken){
+            this.setHealth(this.getHealth() - (damageTaken - this.getArmor()));
             if(this.getHealth() < 0){
                 this.setHealth(0);
             }

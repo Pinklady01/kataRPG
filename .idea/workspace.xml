@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5ec2814-b81d-4d34-a214-a6662256e4f4" name="Default Changelist" comment="add list of factions and modification of the verifFactions fonction">
+    <list default="true" id="b5ec2814-b81d-4d34-a214-a6662256e4f4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cli/src/main/java/fr/esgi/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/cli/src/main/java/fr/esgi/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Characters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Faction.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Faction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Entities.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Entities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +94,7 @@
       <workItem from="1574434523894" duration="110000" />
       <workItem from="1574434679134" duration="4048000" />
       <workItem from="1574495756143" duration="5642000" />
-      <workItem from="1574618940261" duration="10948000" />
+      <workItem from="1574618940261" duration="15432000" />
     </task>
     <task id="LOCAL-00001" summary="Modification in every class">
       <created>1574497688678</created>
@@ -145,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574624579435</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Creation of the CLI">
+      <created>1574630340149</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574630340149</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +177,7 @@
     <MESSAGE value="add Entities" />
     <MESSAGE value="Modified by Franck and myself:&#10;- adding friends factions" />
     <MESSAGE value="add list of factions and modification of the verifFactions fonction" />
-    <option name="LAST_COMMIT_MESSAGE" value="add list of factions and modification of the verifFactions fonction" />
+    <MESSAGE value="Creation of the CLI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation of the CLI" />
   </component>
 </project>

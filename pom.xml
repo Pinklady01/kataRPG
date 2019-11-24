@@ -52,7 +52,7 @@
                                 <transformers>
                                     <transformer
                                             implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                        <mainClass>fr.esgi.fraction.Fraction</mainClass>
+                                        <mainClass>fr.esgi.main</mainClass>
                                     </transformer>
                                 </transformers>
                             </configuration>
