@@ -13,6 +13,7 @@ public class Characters {
     public Characters(String name, String job) {
         this.name = name;
         this.job = job;
+        System.out.printf("You are born !!! (｡◕‿◕｡) \n");
     }
 
     public String getJob() {
@@ -86,37 +87,22 @@ public class Characters {
         if (ennemy != this) {
             if (ennemy.isStatus()) {
                 if (this.verifFaction(ennemy) != 1) {
-                    System.out.println("You are attacking the player " + ennemy.getName());
                     ennemy.takeDamage(1);
-                    if (ennemy.getHealth() == 0) {
-                        System.out.println("You killed the player " + ennemy.getName());
-                    }
                 }
-            } else {
-                System.out.println("The player " + ennemy.getName() + " is already dead !");
             }
         }
     }
 
     public void attackEntities(Entities entity) {
         if (entity.getCurrentHealth() > 0) {
-            System.out.println("You are attacking " + entity.getName());
             entity.takeDamage(1);
-        }else {
-            System.out.println("The "+entity.getName()+" is already dead");
         }
-            if (entity.getCurrentHealth() == 0) {
-                System.out.println("You killed " + entity.getName());
-            }
     }
 
     public void heal(Characters chara){
         if (this.verifFaction(chara) !=2){
             if(chara.isStatus()){
-                System.out.println("You are healing "+chara.getName());
                 chara.healing(1);
-            }else {
-                System.out.println("The player "+chara.getName()+" is already dead !");
             }
         }
     }

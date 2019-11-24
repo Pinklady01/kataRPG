@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5ec2814-b81d-4d34-a214-a6662256e4f4" name="Default Changelist" comment="">
+    <list default="true" id="b5ec2814-b81d-4d34-a214-a6662256e4f4" name="Default Changelist" comment="add list of factions and modification of the verifFactions fonction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli/src/main/java/fr/esgi/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/cli/src/main/java/fr/esgi/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Characters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Faction.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Faction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/fr/esgi/Warrior.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +53,34 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="KataRPG [clean,package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -60,7 +93,8 @@
       <updated>1574434517560</updated>
       <workItem from="1574434523894" duration="110000" />
       <workItem from="1574434679134" duration="4048000" />
-      <workItem from="1574495756143" duration="5163000" />
+      <workItem from="1574495756143" duration="5642000" />
+      <workItem from="1574618940261" duration="10948000" />
     </task>
     <task id="LOCAL-00001" summary="Modification in every class">
       <created>1574497688678</created>
@@ -90,7 +124,28 @@
       <option name="project" value="LOCAL" />
       <updated>1574501031474</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add Entities">
+      <created>1574592419139</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574592419139</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Modified by Franck and myself:&#10;- adding friends factions">
+      <created>1574619493098</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574619493098</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add list of factions and modification of the verifFactions fonction">
+      <created>1574624579435</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574624579435</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,7 +156,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -111,6 +168,8 @@
     <MESSAGE value="Modification in every class" />
     <MESSAGE value="Modification on the Warrior and Mage class" />
     <MESSAGE value="add Entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Entities" />
+    <MESSAGE value="Modified by Franck and myself:&#10;- adding friends factions" />
+    <MESSAGE value="add list of factions and modification of the verifFactions fonction" />
+    <option name="LAST_COMMIT_MESSAGE" value="add list of factions and modification of the verifFactions fonction" />
   </component>
 </project>

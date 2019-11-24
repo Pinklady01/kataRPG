@@ -20,10 +20,7 @@ public class Mage extends Characters {
         if (this.verifFaction(chara) != 2){
             if (chara.isStatus()) {
                 int random = (int) (Math.random() * (this.getMaxHeal() - this.getMinHeal())) + this.getMinHeal();
-                System.out.println("You are healing the player" + chara.getName() + " of " + random);
                 chara.healing(random);
-            } else {
-                System.out.println("The player " + chara.getName() + " is already dead !");
             }
         }
     }
