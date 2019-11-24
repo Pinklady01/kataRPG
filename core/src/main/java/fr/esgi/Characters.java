@@ -13,7 +13,7 @@ public class Characters {
     protected int xp = 0;
     protected int xpGiven = 40;
     protected int lvl = 1;
-    protected int xpNeeded = 50;
+    protected int xpNeeded = 20;
     protected int armor = 0;
     protected int damage = 1;
 
@@ -21,7 +21,7 @@ public class Characters {
     public Characters(String name, String job) {
         this.name = name;
         this.job = job;
-        System.out.printf("You are born !!! (｡◕‿◕｡) \n");
+        System.out.printf(name+" is born !!! (｡◕‿◕｡) \n");
     }
 
     public int getXpNeeded() { return xpNeeded; }
@@ -134,6 +134,8 @@ public class Characters {
                     if(ennemy.getHealth() ==0){
                         this.obtainXp(ennemy.getXpGiven());
                     }
+                }else {
+                    System.out.println("You are allies!! Be careful with your teamate. You could have this poor guy...");
                 }
             }
         }

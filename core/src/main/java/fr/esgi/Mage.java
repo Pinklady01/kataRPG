@@ -21,6 +21,9 @@ public class Mage extends Characters {
             if (chara.isStatus()) {
                 int random = (int) (Math.random() * (this.getMaxHeal() - this.getMinHeal())) + this.getMinHeal();
                 chara.healing(random);
+                if(random > 8){
+                    this.obtainXp(10);
+                }
             }
         }
     }

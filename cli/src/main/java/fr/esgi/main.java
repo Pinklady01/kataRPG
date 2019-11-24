@@ -18,6 +18,10 @@ public class main {
         Faction mu = new Faction("mugiwara");
         Entities d = new Entities("Dragon des océans infernal", 10000, 200);
         attackPlayer(scarlet, monkey);
+        monkey.attackEntities(d);
+        mu.joinFaction(monkey);
+        mu.becomeFriend(tail);
+        attackPlayer(scarlet,monkey);
         buy1Armor(monkey);
 
     }
